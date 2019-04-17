@@ -1,0 +1,19 @@
+﻿<GlobalMap>
+  <Items>
+    <GlobalMapComponent>
+      <EntityName>account</EntityName>
+      <ViewName>Default</ViewName>
+      <IsInitial>true</IsInitial>
+    </GlobalMapComponent>
+    <GlobalMapComponent>
+      <EntityName>msdyn_workorder</EntityName>
+      <ViewName>WorkOrderList</ViewName>
+      <IsInitial>true</IsInitial>
+    </GlobalMapComponent>
+    <GlobalMapComponent>
+      <EntityName>bookableresourcebooking</EntityName>
+      <ViewName>Bookings</ViewName>
+      <IsInitial>true</IsInitial>
+    </GlobalMapComponent>
+  </Items>
+</GlobalMap>

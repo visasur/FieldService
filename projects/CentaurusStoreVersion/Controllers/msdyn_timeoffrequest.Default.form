@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<EntityForm xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="2">
+  <IsContactForm>false</IsContactForm>
+  <EntityName>msdyn_timeoffrequest</EntityName>
+  <CamelCase>msdyn_timeoffrequest</CamelCase>
+  <ClassBinding />
+  <SerializedChildren />
+  <SerializedChildrenV2>
+    <FormTab xsi:type="DetailTab">
+      <Name>General</Name>
+      <SerializedChildren>
+        <DetailItem SchemaName="msdyn_starttime">
+          <IsConstant>false</IsConstant>
+        </DetailItem>
+        <DetailItem SchemaName="msdyn_endtime">
+          <IsConstant>false</IsConstant>
+        </DetailItem>
+        <DetailItem SchemaName="msdyn_resource">
+          <IsConstant>false</IsConstant>
+        </DetailItem>
+        <DetailItem SchemaName="msdyn_approvedby">
+          <IsConstant>false</IsConstant>
+        </DetailItem>
+      </SerializedChildren>
+    </FormTab>
+    <FormTab xsi:type="IFrameTab" flexi="1" flexiHeader="1" flexiMaxLines="0">
+      <Name>TimeOffRequest</Name>
+      <Url>file://TimeOffRequest/TimeOffRequest.html</Url>
+      <DelayLoad>false</DelayLoad>
+      <IsVisible>false</IsVisible>
+    </FormTab>
+  </SerializedChildrenV2>
+  <Navigation>
+    <Name>Navigation</Name>
+    <SerializedChildren />
+  </Navigation>
+  <WorkflowLoad>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+  &lt;Workflow e="true" isvalid="true" syntaxVersion="7" version="0"&gt;
+    &lt;function e="false"&gt;
+      &lt;var&gt;Form.msdyn_approvedby.IsVisible&lt;/var&gt;
+        &lt;arg&gt;Boolean:False&lt;/arg&gt;
+          &lt;func&gt;Assign&lt;/func&gt;
+    &lt;/function&gt;
+  &lt;/Workflow&gt;</WorkflowLoad>
+  <WorkflowSave>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+  &lt;Workflow e="true" isvalid="true" syntaxVersion="7" version="0"&gt;
+  &lt;branch info="Check if end time is later than start time" e="true"&gt;
+    &lt;if e="true"&gt;
+      &lt;conditions e="true" op="And"&gt;
+        &lt;condition e="false"&gt;
+          &lt;var&gt;Entity.msdyn_starttime&lt;/var&gt;
+          &lt;op&gt;ContainsData&lt;/op&gt;
+        &lt;/condition&gt;
+        &lt;condition e="false"&gt;
+          &lt;var&gt;Entity.msdyn_endtime&lt;/var&gt;
+          &lt;op&gt;ContainsData&lt;/op&gt;
+        &lt;/condition&gt;
+        &lt;condition e="false"&gt;
+          &lt;var&gt;Entity.msdyn_starttime&lt;/var&gt;
+          &lt;arg&gt;var:Entity.msdyn_endtime&lt;/arg&gt;
+          &lt;op&gt;GreaterEqual&lt;/op&gt;
+        &lt;/condition&gt;
+      &lt;/conditions&gt;
+      &lt;action e="true"&gt;
+        &lt;function e="false"&gt;
+          &lt;var&gt;ErrorMessage&lt;/var&gt;
+          &lt;arg&gt;String:@Alert.StartTimeLaterThanEndTime&lt;/arg&gt;
+          &lt;func&gt;Assign&lt;/func&gt;
+        &lt;/function&gt;
+      &lt;/action&gt;
+    &lt;/if&gt;
+  &lt;/branch&gt;
+  &lt;/Workflow&gt;</WorkflowSave>
+  <PrimaryCommands>!defcmd</PrimaryCommands>
+  <EnabledWorkflows>OnLoadEnabled OnChangeEnabled OnSaveEnabled</EnabledWorkflows>
+  <SerializedContactInfo />
+</EntityForm>

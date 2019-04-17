@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="utf-8"?>
+<EntityForm xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="2">
+  <IsContactForm>false</IsContactForm>
+  <EntityName>msdyn_workorder</EntityName>
+  <CamelCase>msdyn_workorder</CamelCase>
+  <ClassBinding>
+    <SerializedClassBinding name="#BillingAccount" label="BillingAccount" type="String" />
+    <SerializedClassBinding name="#IsSignatureChange" label="IsSignatureChange" type="String" />
+    <SerializedClassBinding name="#IsSignatureIsDirty" label="IsSignatureIsDirty" type="String" />
+    <SerializedClassBinding name="#IsSignatureIsEmpty" label="IsSignatureIsEmpty" type="String" />
+    <SerializedClassBinding name="#IsSignatureOutdate" label="IsSignatureOutdate" type="String" />
+    <SerializedClassBinding name="#IsWasSyncAfterCreate" label="IsWasSyncAfterCreate" type="String" />
+    <SerializedClassBinding name="#PriceList" label="PriceList" type="String" />
+    <SerializedClassBinding name="#PrimaryIncident" label="PrimaryIncident" type="String" />
+    <SerializedClassBinding name="#PrimaryIncidentType" label="PrimaryIncidentType" type="String" />
+    <SerializedClassBinding name="#PropertiesCount" label="PropertiesCount" type="String" />
+    <SerializedClassBinding name="#ServiceAccount" label="ServiceAccount" type="String" />
+    <SerializedClassBinding name="#Signature" label="Signature" type="String" />
+    <SerializedClassBinding name="#SubStatus" label="SubStatus" type="String" />
+    <SerializedClassBinding name="#WorkOrderType" label="WorkOrderType" type="String" />
+  </ClassBinding>
+  <SerializedChildren />
+  <SerializedChildrenV2>
+    <FormTab xsi:type="DetailTab">
+      <Name>General</Name>
+      <SerializedChildren>
+        <DetailItem SchemaName="msdyn_name">
+          <IsConstant>false</IsConstant>
+        </DetailItem>
+        <DetailItem SchemaName="msdyn_serviceaccount">
+          <IsConstant>false</IsConstant>
+        </DetailItem>
+        <DetailItem SchemaName="msdyn_systemstatus">
+          <IsConstant>false</IsConstant>
+        </DetailItem>
+        <DetailItem SchemaName="msdyn_substatus">
+          <IsConstant>false</IsConstant>
+          <LookupViews>&lt;extra&gt;&lt;filter entity="msdyn_workordersubstatus"&gt;&amp;lt;fetch version="1.0"&amp;gt;&amp;lt;entity name="msdyn_workordersubstatus"&amp;gt;&amp;lt;filter type="and"&amp;gt;&amp;lt;condition attribute="msdyn_systemstatus" operator="eq" value="{{msdyn_systemstatus}}" /&amp;gt;&amp;lt;/filter&amp;gt;&amp;lt;/entity&amp;gt;&amp;lt;/fetch&amp;gt;&lt;/filter&gt;&lt;/extra&gt;</LookupViews>
+        </DetailItem>
+        <DetailItem SchemaName="msdyn_priority">
+          <IsConstant>false</IsConstant>
+        </DetailItem>
+        <DetailItem SchemaName="msdyn_instructions">
+          <IsConstant>false</IsConstant>
+        </DetailItem>
+        <DetailItem SchemaName="transactioncurrencyid">
+          <IsConstant>false</IsConstant>
+        </DetailItem>
+        <DetailItem xsi:type="SeparatorDetailItem">
+          <IsConstant>false</IsConstant>
+        </DetailItem>
+        <DetailItem SchemaName="msdyn_primaryincidenttype">
+          <IsConstant>false</IsConstant>
+        </DetailItem>
+        <DetailItem SchemaName="msdyn_primaryincidentdescription">
+          <IsConstant>false</IsConstant>
+        </DetailItem>
+        <DetailItem SchemaName="msdyn_customerasset" image="false" separator="false">
+          <IsConstant>false</IsConstant>
+          <LookupViews>&lt;extra&gt;&lt;filter entity="msdyn_customerasset"&gt;&amp;lt;fetch version="1.0"&amp;gt;&amp;lt;entity name="msdyn_customerasset"&amp;gt;&amp;lt;filter type="and"&amp;gt;&amp;lt;condition attribute="msdyn_account" operator="eq" value="{{msdyn_serviceaccount}}" /&amp;gt;&amp;lt;/filter&amp;gt;&amp;lt;/entity&amp;gt;&amp;lt;/fetch&amp;gt;&lt;/filter&gt;&lt;/extra&gt;</LookupViews>
+        </DetailItem>
+        <DetailItem SchemaName="msdyn_workordersummary">
+          <IsConstant>false</IsConstant>
+        </DetailItem>
+        <DetailItem SchemaName="msdyn_workordertype">
+          <IsConstant>false</IsConstant>
+        </DetailItem>
+        <DetailItem xsi:type="SeparatorDetailItem">
+          <IsConstant>false</IsConstant>
+        </DetailItem>
+        <DetailItem SchemaName="msdyn_address1">
+          <IsConstant>false</IsConstant>
+        </DetailItem>
+        <DetailItem SchemaName="msdyn_address2">
+          <IsConstant>false</IsConstant>
+        </DetailItem>
+        <DetailItem SchemaName="msdyn_address3">
+          <IsConstant>false</IsConstant>
+        </DetailItem>
+        <DetailItem SchemaName="msdyn_city">
+          <IsConstant>false</IsConstant>
+        </DetailItem>
+        <DetailItem SchemaName="msdyn_stateorprovince">
+          <IsConstant>false</IsConstant>
+        </DetailItem>
+        <DetailItem SchemaName="msdyn_postalcode">
+          <IsConstant>false</IsConstant>
+        </DetailItem>
+        <DetailItem SchemaName="msdyn_country">
+          <IsConstant>false</IsConstant>
+        </DetailItem>
+        <DetailItem SchemaName="msdyn_serviceterritory">
+          <IsConstant>false</IsConstant>
+        </DetailItem>
+        <DetailItem xsi:type="SeparatorDetailItem">
+          <IsConstant>false</IsConstant>
+        </DetailItem>
+        <DetailItem SchemaName="msdyn_taxable">
+          <IsConstant>false</IsConstant>
+        </DetailItem>
+        <DetailItem SchemaName="msdyn_taxcode">
+          <IsConstant>false</IsConstant>
+        </DetailItem>
+        <DetailItem SchemaName="msdyn_parentworkorder">
+          <IsConstant>false</IsConstant>
+          <LookupViews>&lt;extra&gt;&lt;views&gt;msdyn_workorder.WorkOrderList&lt;/views&gt;&lt;filter entity="msdyn_workorder"&gt;&amp;lt;fetch version="1.0"&amp;gt;&amp;lt;entity name="msdyn_workorder"&amp;gt;&amp;lt;filter type="and"&amp;gt;&amp;lt;condition attribute="msdyn_workorderid" operator="ne" value="{{msdyn_workorderid}}" /&amp;gt;&amp;lt;/filter&amp;gt;&amp;lt;/entity&amp;gt;&amp;lt;/fetch&amp;gt;&lt;/filter&gt;&lt;/extra&gt;</LookupViews>
+        </DetailItem>
+      </SerializedChildren>
+    </FormTab>
+    <FormTab xsi:type="IFrameTab" flexi="1" flexiHeader="1" flexiMaxLines="0">
+      <Name>WorkOrder</Name>
+      <Url>file://WorkOrder/WorkOrder.html</Url>
+      <DelayLoad>false</DelayLoad>
+      <IsVisible>false</IsVisible>
+    </FormTab>
+    <FormTab xsi:type="DetailTab">
+      <Name>Other</Name>
+      <SerializedChildren>
+        <DetailItem xsi:type="SeparatorDetailItem">
+          <IsConstant>false</IsConstant>
+        </DetailItem>
+        <DetailItem SchemaName="msdyn_billingaccount">
+          <IsConstant>false</IsConstant>
+        </DetailItem>
+        <DetailItem xsi:type="SeparatorDetailItem">
+          <IsConstant>false</IsConstant>
+        </DetailItem>
+        <DetailItem SchemaName="msdyn_reportedbycontact">
+          <IsConstant>false</IsConstant>
+        </DetailItem>
+        <DetailItem SchemaName="msdyn_timefrompromised">
+          <IsConstant>false</IsConstant>
+        </DetailItem>
+        <DetailItem SchemaName="msdyn_timetopromised">
+          <IsConstant>false</IsConstant>
+        </DetailItem>
+        <DetailItem SchemaName="msdyn_pricelist">
+          <IsConstant>false</IsConstant>
+        </DetailItem>
+        <DetailItem xsi:type="SeparatorDetailItem">
+          <IsConstant>false</IsConstant>
+        </DetailItem>
+        <DetailItem SchemaName="msdyn_estimatesubtotalamount">
+          <IsConstant>false</IsConstant>
+        </DetailItem>
+        <DetailItem xsi:type="SeparatorDetailItem">
+          <IsConstant>false</IsConstant>
+        </DetailItem>
+        <DetailItem SchemaName="msdyn_subtotalamount">
+          <IsConstant>false</IsConstant>
+        </DetailItem>
+        <DetailItem SchemaName="msdyn_totalsalestax">
+          <IsConstant>false</IsConstant>
+        </DetailItem>
+        <DetailItem SchemaName="msdyn_totalamount">
+          <IsConstant>false</IsConstant>
+        </DetailItem>
+      </SerializedChildren>
+    </FormTab>
+    <FormTab xsi:type="MapTab">
+      <Name>Map</Name>
+      <CoordinatesBinding>msdyn_latitude;msdyn_longitude</CoordinatesBinding>
+    </FormTab>
+    <FormTab xsi:type="AssociatedTab">
+      <Name>Incidents</Name>
+      <CustomName>Incidents</CustomName>
+      <LogicalName>msdyn_workorderincident.msdyn_workorder</LogicalName>
+      <Binding SchemaName="msdyn_workorderincident.msdyn_workorder">
+        <IsConstant>false</IsConstant>
+      </Binding>
+    </FormTab>
+    <FormTab xsi:type="AssociatedTab">
+      <Name>Service Tasks</Name>
+      <CustomName>Service Tasks</CustomName>
+      <LogicalName>msdyn_workorderservicetask.msdyn_workorder</LogicalName>
+      <Binding SchemaName="msdyn_workorderservicetask.msdyn_workorder">
+        <IsConstant>false</IsConstant>
+      </Binding>
+    </FormTab>
+    <FormTab xsi:type="AssociatedTab">
+      <Name>Products</Name>
+      <CustomName>Products</CustomName>
+      <LogicalName>msdyn_workorderproduct.msdyn_workorder</LogicalName>
+      <Binding SchemaName="msdyn_workorderproduct.msdyn_workorder">
+        <IsConstant>false</IsConstant>
+      </Binding>
+    </FormTab>
+    <FormTab xsi:type="AssociatedTab">
+      <Name>Services</Name>
+      <CustomName>Services</CustomName>
+      <LogicalName>msdyn_workorderservice.msdyn_workorder</LogicalName>
+      <Binding SchemaName="msdyn_workorderservice.msdyn_workorder">
+        <IsConstant>false</IsConstant>
+      </Binding>
+    </FormTab>
+    <FormTab xsi:type="AssociatedTab">
+      <Name>Payments List</Name>
+      <LogicalName>msdyn_payment.msdyn_workorder</LogicalName>
+      <Binding SchemaName="msdyn_payment.msdyn_workorder">
+        <IsConstant>false</IsConstant>
+      </Binding>
+    </FormTab>
+    <FormTab xsi:type="AssociatedTab">
+      <Name>Notes List</Name>
+      <LogicalName>annotation.objectid</LogicalName>
+      <Binding SchemaName="annotation.objectid">
+        <IsConstant>false</IsConstant>
+      </Binding>
+    </FormTab>
+    <FormTab xsi:type="AssociatedTab">
+      <Name>Activity List</Name>
+      <LogicalName>activity.regardingobjectid</LogicalName>
+      <Binding SchemaName="activity.regardingobjectid">
+        <IsConstant>false</IsConstant>
+      </Binding>
+    </FormTab>
+    <FormTab xsi:type="AssociatedTab">
+      <Name>Bookings</Name>
+      <CustomName>Bookings</CustomName>
+      <LogicalName>bookableresourcebooking.msdyn_workorder</LogicalName>
+      <Binding SchemaName="bookableresourcebooking.msdyn_workorder">
+        <IsConstant>false</IsConstant>
+      </Binding>
+    </FormTab>
+    <FormTab xsi:type="SignatureTab">
+      <Name>Signature</Name>
+      <Configuration />
+    </FormTab>
+  </SerializedChildrenV2>
+  <Navigation>
+    <Name>Navigation</Name>
+    <SerializedChildren />
+  </Navigation>
+  <WorkflowLoad>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;Workflow e="true" isvalid="true" syntaxVersion="7" version="0"&gt;
+    &lt;function e="false"&gt;&lt;var&gt;Form.msdyn_systemstatus.IsEnabled&lt;/var&gt;&lt;arg&gt;Boolean:False&lt;/arg&gt;&lt;func&gt;Assign&lt;/func&gt;&lt;/function&gt;
+    &lt;function e="false"&gt;&lt;var&gt;Form.msdyn_totalsalestax.IsEnabled&lt;/var&gt;&lt;arg&gt;Boolean:False&lt;/arg&gt;&lt;func&gt;Assign&lt;/func&gt;&lt;/function&gt;
+    &lt;function e="false"&gt;&lt;var&gt;Form.msdyn_totalamount.IsEnabled&lt;/var&gt;&lt;arg&gt;Boolean:False&lt;/arg&gt;&lt;func&gt;Assign&lt;/func&gt;&lt;/function&gt;
+    &lt;function e="false"&gt;&lt;var&gt;Form.msdyn_subtotalamount.IsEnabled&lt;/var&gt;&lt;arg&gt;Boolean:False&lt;/arg&gt;&lt;func&gt;Assign&lt;/func&gt;&lt;/function&gt;
+    &lt;function e="false"&gt;&lt;var&gt;Form.msdyn_estimatesubtotalamount.IsEnabled&lt;/var&gt;&lt;arg&gt;Boolean:False&lt;/arg&gt;&lt;func&gt;Assign&lt;/func&gt;&lt;/function&gt;
+    &lt;function e="false"&gt;&lt;var&gt;Form.msdyn_name.IsEnabled&lt;/var&gt;&lt;arg&gt;Boolean:False&lt;/arg&gt;&lt;func&gt;Assign&lt;/func&gt;&lt;/function&gt;
+    &lt;branch info="setup field for new record" e="false"&gt;
+      &lt;if e="true"&gt;&lt;conditions e="true" op="And"&gt;&lt;condition e="false"&gt;
+        &lt;var&gt;Entity.IsNew&lt;/var&gt;&lt;arg&gt;Boolean:True&lt;/arg&gt;&lt;op&gt;Equal&lt;/op&gt;&lt;/condition&gt;
+      &lt;/conditions&gt;
+        &lt;action e="true"&gt;&lt;function e="false"&gt;&lt;var&gt;Form.msdyn_systemstatus.Validate&lt;/var&gt;&lt;arg&gt;Boolean:False&lt;/arg&gt;&lt;func&gt;Assign&lt;/func&gt;&lt;/function&gt;
+        &lt;branch info="hide msdyn_Taxable field" e="true"&gt;
+          &lt;if e="true"&gt;&lt;conditions e="true" op="And"&gt;&lt;condition e="false"&gt;
+            &lt;var&gt;Entity.msdyn_taxable&lt;/var&gt;&lt;arg&gt;Boolean:0&lt;/arg&gt;&lt;op&gt;Equal&lt;/op&gt;&lt;/condition&gt;
+          &lt;/conditions&gt;
+          &lt;action e="true"&gt;&lt;function e="false"&gt;&lt;var&gt;Form.msdyn_taxcode.IsVisible&lt;/var&gt;&lt;arg&gt;Boolean:False&lt;/arg&gt;&lt;func&gt;Assign&lt;/func&gt;&lt;/function&gt;&lt;/action&gt;
+          &lt;/if&gt;
+        &lt;/branch&gt;
+        &lt;/action&gt;
+      &lt;/if&gt;
+    &lt;/branch&gt;
+    &lt;branch info="setup msdyn_name" e="false"&gt;
+      &lt;if e="true"&gt;&lt;conditions e="true" op="And"&gt;&lt;condition e="false"&gt;
+        &lt;var&gt;Entity.msdyn_name&lt;/var&gt;&lt;op&gt;DoesNotContainData&lt;/op&gt;&lt;/condition&gt;
+      &lt;/conditions&gt;
+      &lt;action e="true"&gt;&lt;function e="false"&gt;&lt;var&gt;Form.msdyn_name.Validate&lt;/var&gt;&lt;arg&gt;Boolean:False&lt;/arg&gt;&lt;func&gt;Assign&lt;/func&gt;&lt;/function&gt;&lt;/action&gt;
+      &lt;/if&gt;
+    &lt;/branch&gt;
+    &lt;/Workflow&gt;</WorkflowLoad>
+  <WorkflowSave>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+  &lt;Workflow e="true" isvalid="true" syntaxVersion="7" version="0"&gt;
+    &lt;branch info="If ParentWorkOrder contains data" e="true"&gt;
+      &lt;if e="true"&gt;
+        &lt;conditions e="true" op="And"&gt;
+          &lt;condition e="false"&gt;
+            &lt;var&gt;Entity.msdyn_parentworkorder&lt;/var&gt;
+            &lt;op&gt;ContainsData&lt;/op&gt;
+          &lt;/condition&gt;
+        &lt;/conditions&gt;
+        &lt;action e="true"&gt;
+          &lt;branch info="If ParentWorkOrder does not equal to current WorkOrder" e="true"&gt;
+            &lt;if e="true"&gt;
+              &lt;conditions e="true" op="And"&gt;
+                &lt;condition e="false"&gt;
+                  &lt;var&gt;Entity.msdyn_parentworkorder&lt;/var&gt;
+                  &lt;arg&gt;var:Entity.@this&lt;/arg&gt;
+                  &lt;op&gt;Equal&lt;/op&gt;
+                &lt;/condition&gt;
+              &lt;/conditions&gt;
+              &lt;action e="true"&gt;
+                &lt;function e="false"&gt;
+                  &lt;var&gt;ErrorMessage&lt;/var&gt;
+                  &lt;arg&gt;String:@Alert.WorkOrderCannotBeAssociatedToItself&lt;/arg&gt;
+                  &lt;func&gt;Assign&lt;/func&gt;
+                &lt;/function&gt;
+              &lt;/action&gt;
+            &lt;/if&gt;
+          &lt;/branch&gt;
+        &lt;/action&gt;
+      &lt;/if&gt;
+    &lt;/branch&gt;
+  &lt;/Workflow&gt;</WorkflowSave>
+  <SharedVariables>&lt;SharedVariables&gt;&lt;Variables /&gt;&lt;/SharedVariables&gt;</SharedVariables>
+  <SharedVariableNames />
+  <PrimaryCommands>custom_PayNow|Cmd.PayNow|</PrimaryCommands>
+  <EnabledWorkflows>OnLoadEnabled OnChangeEnabled OnSaveEnabled</EnabledWorkflows>
+  <SerializedContactInfo />
+</EntityForm>

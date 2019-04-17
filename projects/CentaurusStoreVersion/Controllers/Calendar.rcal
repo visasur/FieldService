@@ -1,0 +1,26 @@
+﻿<Tourplan>
+  <Items>
+    <TourplanComponent>
+      <Binding>activity</Binding>
+    </TourplanComponent>
+    <TourplanComponent>
+      <Binding>serviceappointment</Binding>
+    </TourplanComponent>
+    <TourplanComponent>
+      <Binding>appointment</Binding>
+    </TourplanComponent>
+    <TourplanComponent>
+      <Binding>phonecall</Binding>
+    </TourplanComponent>
+    <TourplanComponent>
+      <Binding>email</Binding>
+    </TourplanComponent>
+    <TourplanComponent>
+      <Binding>task</Binding>
+    </TourplanComponent>
+  </Items>
+  <Version>1</Version>
+  <AllowedViews>activity.*:serviceappointment.*:appointment.*:email.*:phonecall.*:task.*</AllowedViews>
+  <BusinessDaysMask>0</BusinessDaysMask>
+  <ViewsMask>0</ViewsMask>
+</Tourplan>
